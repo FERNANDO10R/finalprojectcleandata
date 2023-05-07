@@ -83,3 +83,5 @@ dataTrainTest <- merge(datatrain,datatest, by = "Activity")
 grp<-group_by(dataTrainTest,Train_Subject, Test_Subject)
 
 dataTrTemean <- grp %>% summarize(across(contains("mean")|contains("sdv"),mean))
+
+write.csv(dataTrTemean, file ="dataTrTemean.txt")
